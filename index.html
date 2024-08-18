@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="uk">
+    <head>
+        <link href="./styles.css" rel="stylesheet"/>
+    </head>
+    <body>
+        <div class="container">
+            <div>
+                <h1 class="header_text">Йдеш грати волейбол?</h1>
+            </div>
+            <div class="gif_container">
+                <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExZTZ2eWFpaWhha2p0dGhqZ2s0eGZubXJnZHZ4emhhcm1mYWNpMXFscyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/fb419ke2nUEQwnUpI0/giphy.webp">
+            </div>
+            <div class="buttons">
+                <button class="btn" id="yesButton" onclick="nextPage()">Так</button>
+                <button class="btn" id="noButton" onmouseover="moveButton()" onclick="moveButton()">Ні</button>
+                <script>
+                    function nextPage() {
+                        window.location.href = "yes.html";
+                    }
+
+                    function moveButton() {
+                        var x = Math.random() * (window.innerWidth - document.getElementById('noButton').offsetWidth);
+                        var y = Math.random() * (window.innerHeight - document.getElementById('noButton').offsetHeight);
+                        document.getElementById('noButton').style.left = `${x}px`;
+                        document.getElementById('noButton').style.top = `${y}px`;
+                    }
+                </script>
+            </div>
+        </div>
+    </body>
+</html>
+
+
