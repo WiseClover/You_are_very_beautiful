@@ -2,33 +2,91 @@
 <html lang="uk">
     <head>
         <link href="./styles.css" rel="stylesheet"/>
+        <style>
+            body {
+                background-color: #ffffff; /* світло-сірий фон для легкого вигляду */
+                font-family: Arial, sans-serif;
+                color: #ff0000; /* темний, але не чорний для тексту */
+                margin: 0;
+                padding: 0;
+            }
+
+            .container {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                height: 100vh;
+            }
+
+            .header_text {
+                color: #000000; /* нейтральний темний колір для тексту */
+                font-size: 2.5rem;
+                margin-bottom: 20px;
+                text-align: center;
+            }
+
+            .gif_container {
+                margin-bottom: 30px;
+            }
+
+            .gif_container img {
+                max-width: 100%;
+                height: auto;
+                border-radius: 10px; /* додає трохи м'якості через закруглення */
+            }
+
+            .buttons {
+                display: flex;
+                gap: 20px;
+            }
+
+            .btn {
+                padding: 10px 20px;
+                font-size: 1.2rem;
+                color: #fff;
+                background-color: #df5654; /* червоний колір для акцентів */
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                transition: background-color 0.3s ease;
+            }
+
+            .btn:hover {
+                background-color: #df5654; /* трішки темніший при наведенні */
+            }
+
+            #noButton {
+                position: relative;
+                background-color: #df5252; /* темно-сірий, щоб не був занадто яскравим */
+            }
+
+        </style>
     </head>
     <body>
         <div class="container">
             <div>
-                <h1 class="header_text">Йдеш грати волейбол?</h1>
+                <h1 class="header_text">Ты всегда красивая?</h1>
             </div>
             <div class="gif_container">
-                <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExZTZ2eWFpaWhha2p0dGhqZ2s0eGZubXJnZHZ4emhhcm1mYWNpMXFscyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/fb419ke2nUEQwnUpI0/giphy.webp">
+                <img src="https://i.gifer.com/19wO.gif">
             </div>
             <div class="buttons">
                 <button class="btn" id="yesButton" onclick="nextPage()">Так</button>
                 <button class="btn" id="noButton" onmouseover="moveButton()" onclick="moveButton()">Ні</button>
-                <script>
-                    function nextPage() {
-                        window.location.href = "yes.html";
-                    }
-
-                    function moveButton() {
-                        var x = Math.random() * (window.innerWidth - document.getElementById('noButton').offsetWidth);
-                        var y = Math.random() * (window.innerHeight - document.getElementById('noButton').offsetHeight);
-                        document.getElementById('noButton').style.left = `${x}px`;
-                        document.getElementById('noButton').style.top = `${y}px`;
-                    }
-                </script>
             </div>
         </div>
+        <script>
+            function nextPage() {
+                window.location.href = "yes.html";
+            }
+
+            function moveButton() {
+                var x = Math.random() * (window.innerWidth - document.getElementById('noButton').offsetWidth);
+                var y = Math.random() * (window.innerHeight - document.getElementById('noButton').offsetHeight);
+                document.getElementById('noButton').style.left = `${x}px`;
+                document.getElementById('noButton').style.top = `${y}px`;
+            }
+        </script>
     </body>
 </html>
-
-
